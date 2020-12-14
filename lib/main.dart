@@ -31,15 +31,15 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     debugPrint('Started the Splash Screen');
-    Timer(Duration(seconds: 20), Finished);
+    // Timer(Duration(seconds: 20), );
   }
 
-  void Finished() {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => firstScreen()),
-    );
-  }
+  // void Shaki() {
+  //   Navigator.pushReplacement(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => firstScreen()),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
