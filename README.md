@@ -11,4 +11,6 @@ A new Flutter application.
 # Working 
 
 <img src="https://user-images.githubusercontent.com/73787635/102110862-7f139a00-3e57-11eb-99da-f366e0c737d7.gif" height = 500, width = 350/>
+
+<img src="https://user-images.githubusercontent.com/73787635/102111056-bda95480-3e57-11eb-9c14-35441fdc780c.gif" height = 500, width = 350/>
          
