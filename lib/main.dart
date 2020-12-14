@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
+import 'firstScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primaryColor: Colors.indigo),
       title: 'Splash Screen Application',
       home: HomePage(),
+      routes: {
+        '/sk': (context) => firstScreen(),
+      },
     );
   }
 }
@@ -27,11 +31,14 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     debugPrint('Started the Splash Screen');
-    Timer(Duration(seconds: 4), Finished);
+    Timer(Duration(seconds: 20), Finished);
   }
 
   void Finished() {
-    debugPrint("Finished......!");
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => firstScreen()),
+    );
   }
 
   @override
@@ -66,6 +73,34 @@ class _HomePageState extends State<HomePage> {
                   radius: 100.0,
                 ),
               ],
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          MaterialButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+                side: BorderSide(color: Colors.red)),
+            splashColor: Colors.lime,
+            highlightColor: Colors.indigo,
+            onPressed: () {
+              Navigator.pushNamed(context, '/sk');
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => firstScreen(),
+              //   ),
+              // );
+            },
+            padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+            color: Colors.red,
+            textColor: Colors.white,
+            child: Text(
+              'First Screen',
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
             ),
           ),
         ],
